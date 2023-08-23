@@ -8,15 +8,20 @@ div.cols {
     /* margin-left: 70px; */
     margin-top: 50px;
   }
-  div.dist{
-    height: 300px;
-  }
+
   h1{
     text-align: center;
     margin-top: 20px;
   }
+  @keyframes zoomAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
   div.cols:hover {
+    display: inline-block;
     border: 1px solid #777;
+    animation: zoomAnimation 3s infinite;
   }
   
   div.cols img {
@@ -38,6 +43,12 @@ div.cols {
   padding: 0 6px;
   float: left;
   width: 24.99999%;
+}
+.desc{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 700px) {
