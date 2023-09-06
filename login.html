@@ -43,9 +43,9 @@
               <form>
                 <h2 class="h2">Login</h2>
                 <br>
-                <input type="email" placeholder="Email" id="email">
+                <input type="email" placeholder="Email" id="email" onkeyup=" validateEmail()">
                 <span id="err1" style="color: red;"></span><br>
-                <input type="password" placeholder="Password" id="password">
+                <input type="password" placeholder="Password" id="password" onkeyup="validatePassword()">
                 <span id="err2" style="color: red;"></span><br>
                 <button onclick="return validateForm();">Log In</button>
                 <br><br>

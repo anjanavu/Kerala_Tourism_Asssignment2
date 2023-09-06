@@ -1,20 +1,18 @@
 function validatePhoneNumber() {
     var phoneNumber = document.getElementById('phoneNumber').value;
-    // Remove non-numeric characters from the phone number
-    var numericPhoneNumber = phoneNumber.replace(/\D/g, '');
     var err1 = document.getElementById('err1');
-    var regexp1 = /^(?:\d{10}|\d{3}[-. ]\d{3}[-. ]\d{4})$/;
+    var regexp1 = /^[0-9]{10}$|^[0-9]{3}[-. ][0-9]{3}[-. ][0-9]{4}$/;
 
-    if (regexp1.test(numericPhoneNumber)) {
+    if (regexp1.test(phoneNumber)) {
         err1.innerText = "";
+        err1.style.color = 'green';
         return true;
     } else {
-        err1.innerText = "Invalid phone number format. Please use one of the following formats: XXXXXXXXXX, XXX-XXX-XXXX, XXX.XXX.XXXX, or XXX XXX XXXX";
+        err1.innerText = "Please Enter a valid Phone Number";
         err1.style.color = 'red';
         return false;
     }
 }
-
 // Function to validate email
 function validateEmail() {
     var email = document.getElementById('email').value;
@@ -51,7 +49,7 @@ function validatePassword() {
         }
         return true;
     } else {
-        err3.innerText = "Password must contain at least one uppercase letter, one lowercase letter, and one digit.";
+        err3.innerText = "Please Enter a Valid Password";
         err3.style.color = 'red';
         return false;
     }
@@ -62,7 +60,11 @@ function validateConfirmPassword() {
     var confirmPassword = document.getElementById('confirmPassword').value;
     var err4 = document.getElementById('err4');
 
-    if (password === confirmPassword) {
+    if (confirmPassword === '') {
+        err4.innerText = "Please enter a password";
+        err4.style.color = 'red';
+        return false;
+    } else if (password === confirmPassword) {
         err4.innerText = "Passwords match";
         err4.style.color = 'green';
         return true;
@@ -72,6 +74,7 @@ function validateConfirmPassword() {
         return false;
     }
 }
+
 
 
 

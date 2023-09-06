@@ -43,14 +43,14 @@
           <form>
             <h2> SIGN UP</h2>
             <br>
-            <input type="text" id="phoneNumber" placeholder="Enter Your Phone Number">
+            <input type="text" id="phoneNumber" placeholder="Enter Your Phone Number" onkeyup="validatePhoneNumber()" required title="Please use one of the following formats: XXXXXXXXXX, XXX-XXX-XXXX, XXX.XXX.XXXX, or XXX XXX XXXX">
             <span id="err1"></span><br>
-            <input type="email" id="email" placeholder="Enter Your Email">
+            <input type="email" id="email" placeholder="Enter Your Email" onkeyup="validateEmail()">
             <span id="err2"></span><br>
 
-            <input type="password" id="password" placeholder="Create Password" onkeyup="validatePassword()">
+            <input type="password" id="password" placeholder="Create Password" onkeyup="validatePassword()" required title="Password must contain at least one uppercase letter, one lowercase letter, and one digit">
             <span id="err3"></span><br>
-            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" onkeyup="validateConfirmPassword()">
             <span id="err4"></span><br>
 
             <button  onclick="return validateForm()">Create Account</button>
